@@ -188,6 +188,9 @@ public class AuthenticationParameters
 			return new AuthenticationParameters(this);
 		}
 
+		/**
+		 * Returns MD5 hash from random string
+		 */
 		public String nextState() {
 			SecureRandom random = new SecureRandom();
 			String randomStr = new BigInteger(130, random).toString(32);
