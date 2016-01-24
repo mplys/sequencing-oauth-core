@@ -13,7 +13,7 @@ public interface SequencingOAuth2Client
 {
 	/**
 	 * Returns map of parameters needed for initial GET redirect to sequencing authentication endpoint
-	 * @return Map<String, String> map with parameters, where key is parameter name
+	 * @return Map map with parameters, where key is parameter name
 	 */
 	public Map<String, String> getHttpParametersForRedirect();
 
