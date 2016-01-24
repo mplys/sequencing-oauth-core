@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.google.common.base.Joiner;
 import com.sequencing.oauth2demo.config.AuthenticationParameters;
 import com.sequencing.oauth2demo.exception.FailureBasicAuthentication;
 import com.sequencing.oauth2demo.exception.InvalidStateException;
@@ -99,7 +100,7 @@ public class DefaultSequencingOAuth2Client implements SequencingOAuth2Client
 	
 	@Override
 	public String getLoginRedirectUrl() {
-		return String.format("%s?%s", ATTR_REDIRECT_URL, String.join("&", getAttributesForRedirectAsList()));
+		return String.format("%s?%s", parameters.getOAuthAuthorizationUri(), Joiner.on("&").join(getAttributesForRedirectAsList()));
 	}
 
 	@Override
